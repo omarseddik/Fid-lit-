@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Richflor
+        psr4_prefix: Richflor
+        src_path: app
