@@ -17,8 +17,10 @@ class CreateClientTable extends Migration
               $table->string('firstname');
               $table->string('lastname');
               $table->string('cin');
+              $table->string('phonenumber');
+              $table->string('email');
               $table->string('gender',1);
-              $table->date('birthdate')->nullable();
+              $table->integer('birthdate');
               $table->boolean('active')->default(1);
               $table->timestamps();
         });

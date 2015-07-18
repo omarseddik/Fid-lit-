@@ -1,1 +1,1 @@
-Home
+@extends('layout')

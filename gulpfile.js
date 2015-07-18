@@ -12,5 +12,15 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('application.scss');
+    mix.less([
+        "AdminLTE.less",
+        "skins/_all-skins.less"
+    ], "public/assets/css");
+});
+
+elixir(function(mix) {
+    mix.scripts([
+        "jquery.js",
+        "app.js"
+    ]);
 });

@@ -11,17 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/dashboard',['middleware' => 'auth', function () {
+Route::get('/',['middleware' => 'auth', function () {
     return view('dashboard');
 }]);
-// Authentication routes...
+
+/*Route Client*/
+Route::get('client',['middleware' => 'auth', 'uses'=>'ClientController@index']);
+Route::get('client/add',['middleware' => 'auth','uses'=>'ClientController@create']);
+Route::match(['get', 'put'],'client/edit/{id}',['middleware' => 'auth','uses'=> 'ClientController@edit'])->where('id', '[0-9]+');
+Route::match(['post'],'client/add',['middleware' => 'auth', 'uses'=>'ClientController@add']);
+
+/*Authentication routes*/
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-// Registration routes...
+/*Registration routes*/
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');

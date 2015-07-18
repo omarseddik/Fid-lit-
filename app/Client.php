@@ -18,7 +18,7 @@ class Client extends Model
      *
      * @var array
      */
-    protected $fillable = ['firstname', 'lastname', 'birthdate','cin','gender','active'];
+    protected $fillable = ['firstname', 'lastname','phonenumber','email', 'birthdate','cin','gender','active'];
 
 
     public function scopeWomen($query)
