@@ -20,6 +20,10 @@ Route::get('client',['middleware' => 'auth', 'uses'=>'ClientController@index']);
 Route::get('client/add',['middleware' => 'auth','uses'=>'ClientController@create']);
 Route::match(['get', 'put'],'client/edit/{id}',['middleware' => 'auth','uses'=> 'ClientController@edit'])->where('id', '[0-9]+');
 Route::match(['post'],'client/add',['middleware' => 'auth', 'uses'=>'ClientController@add']);
+Route::match(['get'],'client/delete/{id}',['middleware' => 'auth', 'uses'=>'ClientController@delete'])->where('id', '[0-9]+');
+
+/*Operation*/
+Route::match(['get', 'post'],'client/{id}/operation/add',['middleware' => 'auth','uses'=> 'OperationController@add'])->where('id', '[0-9]+');
 
 /*Authentication routes*/
 Route::get('auth/login', 'Auth\AuthController@getLogin');

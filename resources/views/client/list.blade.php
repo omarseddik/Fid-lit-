@@ -22,6 +22,7 @@
 								<th>Gender</th>
 								<th>CIN</th>
 								<th>Date de naissance</th>
+								<th>Points</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -32,13 +33,17 @@
 								<td>{{ $client->lastname  }}</td>
 								<td>{{ $client->gender }}</td>
 								<td>{{ $client->cin }}</td>
-								<td>{{ date('d/m/Y', $client->birthdate) }}</td>
+								<td>{{  date('d/m/Y', strtotime($client->birthdate)) }}</td>
+								<td>{{ $client->points }}</td>
 								<td>
 									<a href="{{ url('client/edit',[$client->id]) }}" class="btn btn-success">
 										<i class="fa fa-edit"></i>
 									</a>
-									<a href="" class="btn btn-danger">
+									<a href="{{ url('client/delete',[$client->id]) }}" class="btn btn-danger">
 										<i class="fa fa-trash"></i>
+									</a>
+									<a href="{{ action('OperationController@add',[$client->id]) }}" class="btn btn-info">
+										<i class="fa fa-money"></i>
 									</a>
 								</td>
 							</tr>

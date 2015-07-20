@@ -49,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   |               | sidebar-mini                            |
   |---------------------------------------------------------|
 -->
-<body class="skin-red sidebar-mini">
+<body class="skin-black sidebar-mini">
   <div class="wrapper">
 
    @include('partial.header')

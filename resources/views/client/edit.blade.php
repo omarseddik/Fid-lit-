@@ -41,7 +41,7 @@
 							<div class="input-group-addon">
 								<i class="fa fa-calendar"></i>
 							</div>
-							<input class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" type="text" name='birthdate' value="{{ date('d/m/Y', $client->birthdate) }}">
+							<input class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" type="text" name='birthdate' value="{{  date('d/m/Y', strtotime($client->birthdate)) }}">
 						</div><!-- /.input group -->
 					</div>
 					<div class="form-group">
