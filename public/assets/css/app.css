@@ -2985,7 +2985,8 @@ table.text-center th {
 }
 .login-page,
 .register-page {
-  background: #d2d6de;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url('/assets/img/cover.jpg');
+  background-size: cover;
 }
 .login-box,
 .register-box {
